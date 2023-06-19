@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+    <link rel="stylesheet" href="Library.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-container">
+            <div class="title-and-description">
+                <h1 class="app-title">
+                    Library App
+                </h1>
+
+                <p class="app-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Nisi quo saepe quos vero ullam quidem veniam fugit. Deserunt, in. 
+                    Voluptatem recusandae minima dicta tenetur velit sequi. 
+                    Consectetur ipsum cupiditate quos.
+                </p>
+            </div>
+
+            <div class="add-book-interface">
+                <form action="" method="POST">
+                    <table>
+                        <tr>
+                            <td><label for="Book">Book</label></td>
+                            <td><label for="Author">Author</label></td>
+                            <td><label for="Status">Read</label></td>
+                        </tr>
+
+                        <tr>
+                            <td><input type="text" name="Book" id="Book-input"></td>
+                            <td><input type="text" name="Author" id="Author-input"></td>
+                            <td>
+                                <label for="Status">Yes</label>
+                                <input type="radio" name="Status" class="Status-input" value="Yes">
+                                <label for="Status">No</label>
+                                <input type="radio" name="Status" class="Status-input" value="No">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                
+
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+
+        <div class="library-contents">
+            <table class="library-table">
+                <thead class="header-row">
+                    <tr>
+                        <th>Book</th>
+                        <th>Author</th>
+                        <th>Status</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                
+                <tr class="listed-books">
+                    <td class="Book">The Great Gatsby</td>
+                    <td class="Author">F. Scott Fitzgerald</td>
+                    <td class="Buttons"><button class="read-status">unread</button></td>
+                    <td class="Buttons"><button class="delete-btns">Delete</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

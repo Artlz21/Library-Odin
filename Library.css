@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+    background-color: lightblue;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.top-container{
+    margin-bottom: 45px;
+    background-color: lightsalmon;
+}
+
+.title-and-description{
+    margin-bottom: 25px;
+    margin-top: 95px;
+    margin-left:  120px;
+    margin-right: 120px;
+}
+
+.add-book-interface{
+    margin-bottom: 25px;
+    margin-left:  120px;
+    margin-right: 120px;
+}
+
+.add-book-interface table {
+    width: 100%;
+}
+
+#Book-input,
+#Author-input{
+    width: 24rem;
+    height: 2rem;
+}
+
+.add-book-interface button{
+    margin-top: 30px;
+    margin-left: 15px;
+    width: 100px;
+    height: 45px;
+    border-radius: 15px;
+    border-width: 1px;
+    background-color: green;
+    color: white;
+}
+
+.library-contents{
+    display: flex;
+    justify-content: center;
+}
+
+.library-table{
+    width: 80%;
+    border-spacing: 0;
+}
+
+.header-row th{
+    text-align: left;
+    border-collapse: collapse;
+    border-bottom: 2px solid #E1E1E1;
+    height: 2.4rem;
+}
+
+.listed-books{
+
+}
+
+.listed-books td{
+    height: 4rem;
+}
+
+.Book, .Author{
+    width: 35%;
+}
+
+.Buttons button{
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+.read-status{
+    background-color: lightgray;
+}
+
+.delete-btns{
+    background-color: red;
+}
