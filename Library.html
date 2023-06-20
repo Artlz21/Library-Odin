@@ -23,7 +23,7 @@
             </div>
 
             <div class="add-book-interface">
-                <form action="" method="POST">
+                <form action="" method="POST" id="Book-submission">
                     <table>
                         <tr>
                             <td><label for="Book">Book</label></td>
@@ -36,16 +36,17 @@
                             <td><input type="text" name="Author" id="Author-input"></td>
                             <td>
                                 <label for="Status">Yes</label>
-                                <input type="radio" name="Status" class="Status-input" value="Yes">
+                                <input type="radio" name="Status" class="Status-input" value="Read">
                                 <label for="Status">No</label>
-                                <input type="radio" name="Status" class="Status-input" value="No">
+                                <input type="radio" name="Status" class="Status-input" value="Unread">
                             </td>
                         </tr>
                     </table>
+
+                    <button type="submit">Submit</button>
                 </form>
                 
 
-                <button type="submit">Submit</button>
             </div>
         </div>
 
@@ -60,7 +61,7 @@
                     </tr>
                 </thead>
                 
-                <tr class="listed-books">
+                <tr class="listed-book">
                     <td class="Book">The Great Gatsby</td>
                     <td class="Author">F. Scott Fitzgerald</td>
                     <td class="Buttons"><button class="read-status">unread</button></td>
@@ -69,5 +70,7 @@
             </table>
         </div>
     </div>
+
+    <script src="Library.js"></script>
 </body>
 </html>
