@@ -26,6 +26,10 @@ const getFormSub = (row) => {
         let authorValue = document.getElementById("Author-input").value;
         let statusValue = document.querySelector(".Status-input:checked").value;
 
+        if(!bookValue){
+            return;
+        }
+
         addToLibrary(bookValue, authorValue, statusValue);
 
         document.getElementById("Book-input").value = "";
@@ -33,7 +37,7 @@ const getFormSub = (row) => {
         document.querySelector(".Status-input:checked").checked = false;
 
         clearContents();
-        render(row)
+        render(row);
     });
 }
 
@@ -47,11 +51,14 @@ const addToContents = (obj, row) => {
     let authorCell = cloneRow.querySelector(".Author");
     let statusCell = cloneRow.querySelector(".read-status");
 
-    bookCell.innerText = obj.book;
-    authorCell.innerText = obj.author;
-    statusCell.innerText = obj.status;
+    bookCell.textContent = obj.book;
+    authorCell.textContent = obj.author;
+    statusCell.textContent = obj.status;
 
     table.appendChild(cloneRow);
+
+    deleteButton(cloneRow);
+    readStatusButton(cloneRow);
 }
 
 // loop through library to display each object in contents.
@@ -70,13 +77,52 @@ const clearContents = () => {
     });
 }
 
+// gives function to the delete button
+const deleteButton = (row) => {
+    let delBtn = row.querySelector(".delete-btns");
+
+    delBtn.addEventListener("click", () => {
+        let bookTitle = row.querySelector(".Book").textContent;
+
+        let index = myLibrary.findIndex((book) => book.book == bookTitle);
+
+        if(index != -1){
+            myLibrary.splice(index, 1);
+        }
+
+        row.remove();
+    })
+}
+
+// gives function to read/unread status button
+const readStatusButton = (row) => {
+   let readButton = row.querySelector(".read-status");
+
+   if(readButton.textContent == "Read"){
+        readButton.style.backgroundColor = "green";
+   }
+   else{
+        readButton.style.backgroundColor = "lightgray";
+   }
+
+   readButton.addEventListener("click", (e) => {
+        if(e.target.textContent == "Read"){
+            e.target.textContent = "UnRead";
+            readButton.style.backgroundColor = "lightgray";
+        }
+        else{
+            e.target.textContent = "Read";
+            readButton.style.backgroundColor = "green";
+        }
+   })
+}
+
 (() => {
     // select table row to use the structure for future use then remove original from table.
     let row = document.querySelector(".listed-book");
+
     row.remove();
 
     getFormSub(row);
-
-    render(row);
 })
 ();
